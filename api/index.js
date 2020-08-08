@@ -23,6 +23,8 @@ router.get("/dl",(req,res) => {
 
 router.get("/generate",(req,res) => {
 
+  console.log("hello generate");
+
   return new Promise(reso => {
     
     new Promise(reso1 => {

@@ -30,7 +30,10 @@ export default {
     async generate() {
       this.creating = true;
       const url = "/api/generate";
-      const response = await this.$axios.$get(url);
+      const response = await this.$axios.$get(url)
+        .catch(e => {
+          console.log("いけんかったで！");
+        });
       this.creating = false;
       this.created = true;
       
