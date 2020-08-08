@@ -2,7 +2,6 @@ const express = require("express");
 const cors = require("cors");
 const { exec } = require('child_process')
 
-
 const router = express.Router();
 
 const app = express()
@@ -21,9 +20,11 @@ router.get("/dl",(req,res) => {
   res.download(file);
 })
 
-router.get("/generate",(req,res) => {
+router.get("/test",(req,res) => {
+  res.status(200).json({ message: "test success !"})
+});
 
-  console.log("hello generate");
+router.get("/generate",(req,res) => {
 
   return new Promise(reso => {
     
