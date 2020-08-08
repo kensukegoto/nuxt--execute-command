@@ -1,10 +1,13 @@
 const express = require("express");
+const cors = require("cors");
 const { exec } = require('child_process')
 
 
 const router = express.Router();
 
 const app = express()
+app.use(cors())
+
 router.use((req,res,next) => {
   Object.setPrototypeOf(req,app.request);
   Object.setPrototypeOf(res,app.response);
